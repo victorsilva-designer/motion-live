@@ -1,4 +1,4 @@
-import '../../tokens/sbk-playground.css'
+import '../tokens/live.css'
 import styles from './Live.module.css'
 
 export type LiveProps = {
