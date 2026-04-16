@@ -26,7 +26,6 @@ export function Live({
       aria-label={label}
     >
       <span className={styles.ripple} aria-hidden />
-      <span className={styles.ripple} aria-hidden />
       <span className={styles.core} aria-hidden />
     </div>
   )

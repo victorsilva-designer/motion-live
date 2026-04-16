@@ -24,10 +24,6 @@
   will-change: transform, opacity;
 }
 
-.ripple:nth-child(2) {
-  animation-delay: calc(var(--live-animation-duration) * 0.5);
-}
-
 .core {
   position: absolute;
   left: 50%;
@@ -51,13 +47,11 @@
   will-change: box-shadow, transform;
 }
 
+/* Expande e desvanece: 70% → 0% de opacidade no máximo da expansão */
 @keyframes liveRipple {
   0% {
     transform: scale(0.55);
-    opacity: 0.88;
-  }
-  70% {
-    opacity: 0.25;
+    opacity: 0.7;
   }
   100% {
     transform: scale(2.85);
@@ -92,10 +86,6 @@
   transform: scale(0.55);
 }
 
-.root[data-motion='off'] .ripple:nth-child(2) {
-  display: none;
-}
-
 .root[data-motion='off'] .core {
   transform: scale(1);
 }
@@ -108,9 +98,5 @@
 
   .ripple {
     opacity: 0;
-  }
-
-  .ripple:nth-child(2) {
-    display: none;
   }
 }

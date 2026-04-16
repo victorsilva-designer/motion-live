@@ -4,5 +4,6 @@
   --live-ripple-border: color-mix(in srgb, var(--live-neon) 55%, transparent);
   --live-pulsar-size: 72px;
   --live-core-size: 14px;
-  --live-animation-duration: 1.6s;
+  /* Período das ondas: 1.6 s + 13 ms */
+  --live-animation-duration: calc(1.6s + 13ms);
 }
