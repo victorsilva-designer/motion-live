@@ -1,0 +1,30 @@
+/*
+  SBK → Playground
+  Figma: https://www.figma.com/design/OmEUkPXW8INlwpPZEGT1EV/SBK--%3E-Playground?node-id=1408-39437
+*/
+:root {
+  --sbk-page-bg: #0b1429;
+  --sbk-card-bg: rgba(255, 255, 255, 0.04);
+  --sbk-card-border: rgba(255, 255, 255, 0.08);
+  --sbk-text: #f1f5f9;
+  --sbk-text-muted: rgba(241, 245, 249, 0.58);
+  --sbk-text-soft: rgba(241, 245, 249, 0.4);
+  --sbk-icon-ghost: rgba(255, 255, 255, 0.07);
+  --sbk-icon-ghost-border: rgba(255, 255, 255, 0.1);
+
+  --sbk-odd-pill-bg: rgba(255, 255, 255, 0.06);
+  --sbk-odd-pill-border: rgba(255, 255, 255, 0.1);
+
+  --sbk-radius-sm: 8px;
+  --sbk-radius-md: 12px;
+  --sbk-radius-card: 14px;
+
+  --sbk-live-bolt-size: 28px;
+  --sbk-live-bolt-icon: 13px;
+  --sbk-live-bolt-radius: var(--sbk-radius-sm);
+  --sbk-live-bolt-fill: #1fb5ad;
+  --sbk-live-bolt-fill-deep: #15928c;
+  --sbk-live-bolt-icon-color: #f8fafc;
+  --sbk-live-bolt-border: rgba(255, 255, 255, 0.14);
+  --sbk-live-bolt-duration: 2.4s;
+}
