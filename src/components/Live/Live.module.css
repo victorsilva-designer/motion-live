@@ -1,0 +1,116 @@
+.root {
+  position: relative;
+  display: inline-block;
+  width: var(--live-pulsar-size);
+  height: var(--live-pulsar-size);
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.ripple {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  margin-top: -11px;
+  border-radius: 50%;
+  border: 2px solid var(--live-ripple-border);
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 0;
+  animation: liveRipple var(--live-animation-duration) ease-out infinite;
+  will-change: transform, opacity;
+}
+
+.ripple:nth-child(2) {
+  animation-delay: calc(var(--live-animation-duration) * 0.5);
+}
+
+.core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: var(--live-core-size);
+  height: var(--live-core-size);
+  margin-left: calc(var(--live-core-size) / -2);
+  margin-top: calc(var(--live-core-size) / -2);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #b8ffc4,
+    var(--live-neon) 45%,
+    color-mix(in srgb, var(--live-neon-mid) 40%, #166534) 100%
+  );
+  box-shadow:
+    0 0 6px color-mix(in srgb, var(--live-neon) 75%, transparent),
+    0 0 14px color-mix(in srgb, var(--live-neon) 45%, transparent);
+  animation: liveCoreGlow var(--live-animation-duration) ease-in-out infinite;
+  will-change: box-shadow, transform;
+}
+
+@keyframes liveRipple {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.88;
+  }
+  70% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(2.85);
+    opacity: 0;
+  }
+}
+
+@keyframes liveCoreGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 5px color-mix(in srgb, var(--live-neon) 65%, transparent),
+      0 0 12px color-mix(in srgb, var(--live-neon) 38%, transparent);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow:
+      0 0 10px color-mix(in srgb, var(--live-neon) 90%, transparent),
+      0 0 22px color-mix(in srgb, var(--live-neon) 55%, transparent),
+      0 0 36px color-mix(in srgb, var(--live-neon-mid) 35%, transparent);
+  }
+}
+
+.root[data-motion='off'] .ripple,
+.root[data-motion='off'] .core {
+  animation: none;
+}
+
+.root[data-motion='off'] .ripple {
+  opacity: 0;
+  transform: scale(0.55);
+}
+
+.root[data-motion='off'] .ripple:nth-child(2) {
+  display: none;
+}
+
+.root[data-motion='off'] .core {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple,
+  .core {
+    animation: none;
+  }
+
+  .ripple {
+    opacity: 0;
+  }
+
+  .ripple:nth-child(2) {
+    display: none;
+  }
+}

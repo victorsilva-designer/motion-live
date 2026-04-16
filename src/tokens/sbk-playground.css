@@ -1,0 +1,8 @@
+:root {
+  --live-neon: #39ff14;
+  --live-neon-mid: #4ade80;
+  --live-ripple-border: color-mix(in srgb, var(--live-neon) 55%, transparent);
+  --live-pulsar-size: 72px;
+  --live-core-size: 14px;
+  --live-animation-duration: 1.6s;
+}
